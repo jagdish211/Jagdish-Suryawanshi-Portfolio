@@ -8,168 +8,820 @@
   <meta property="og:title" content="Jagdish Pravin Suryawanshi | Data Scientist Portfolio">
   <meta property="og:description" content="Modern Data Scientist portfolio featuring Python, SQL, Machine Learning and Data Visualization projects.">
   <title>Jagdish Pravin Suryawanshi | Data Scientist Portfolio</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+
   <div class="bg-grid"></div>
+
   <header class="navbar" id="navbar">
-    <a href="#home" class="brand"><span>J</span> Jagdish  Suryawanshi.</a>
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+    <a href="#home" class="brand"><span>J</span> Jagdish Suryawanshi.</a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
     <nav id="navMenu">
-      <a href="#home" class="active">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
-      <a href="#projects">Projects</a><a href="#education">Education</a><a href="#experience">Experience</a>
-      <a href="#certifications">Certifications</a><a href="#contact">Contact</a>
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><i class="fa-solid fa-sun"></i></button>
+
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+      <i class="fa-solid fa-sun"></i>
+    </button>
   </header>
 
   <main>
+
+    <!-- HOME -->
     <section class="hero section" id="home">
+
       <div class="hero-copy reveal">
-        <p class="eyebrow"><span></span> AVAILABLE FOR OPPORTUNITIES</p>
-        <h1>Hi, I'm <span>Jagdish</span>.<br><strong>Data Scientist.</strong></h1>
-        <p class="hero-text">Transforming data into meaningful insights and intelligent solutions using Python, SQL, Machine Learning, and Data Visualization.</p>
+        <p class="eyebrow">
+          <span></span> AVAILABLE FOR OPPORTUNITIES
+        </p>
+
+        <h1>
+          Hi, I'm <span>Jagdish</span>.<br>
+          <strong>Data Scientist.</strong>
+        </h1>
+
+        <p class="hero-text">
+          Transforming data into meaningful insights and intelligent solutions using Python, SQL, Machine Learning, and Data Visualization.
+        </p>
+
         <div class="hero-actions">
-          <a class="btn primary" href="#projects">View My Projects <i class="fa-solid fa-arrow-right"></i></a>
-          <a class="btn ghost" href="assets/Jagdish_Suryawanshi_Resume.pdf" download>Download Resume <i class="fa-solid fa-download"></i></a>
+          <a class="btn primary" href="#projects">
+            View My Projects <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+          <a class="btn ghost" href="assets/Jagdish_Suryawanshi_Resume.pdf" download>
+            Download Resume <i class="fa-solid fa-download"></i>
+          </a>
         </div>
+
         <div class="socials">
-          <a href="https://github.com/jagdish211" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/jagdish-suryawanshi-9069403a0//" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="mailto:your-email@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://github.com/jagdish211" target="_blank" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/jagdish-suryawanshi-9069403a0//" target="_blank" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+
+          <a href="mailto:your-email@example.com" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
         </div>
       </div>
+
       <div class="hero-photo reveal">
         <div class="photo-orbit"></div>
+
         <div class="photo-card">
-          <img src="assets/profile.jpg" alt="Jagdish Pravin Suryawanshi profile photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="photo-placeholder"><i class="fa-solid fa-user"></i><span>Add your photo</span><small>assets/profile.jpg</small></div>
-          <div class="photo-tag"><i class="fa-solid fa-chart-line"></i> DATA SCIENCE</div>
-        </div>
-        <div class="float-card fc-one"><i class="fa-brands fa-python"></i><span>Python</span></div>
-        <div class="float-card fc-two"><i class="fa-solid fa-database"></i><span>SQL</span></div>
-      </div>
-    </section>
+          <img src="assets/profile.jpg"
+               alt="Jagdish Pravin Suryawanshi profile photo"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
 
-    <section class="stats section">
-      <div class="stat reveal"><strong data-count="6">0</strong><span>Featured Projects</span></div>
-      <div class="stat reveal"><strong data-count="10">0</strong><span>Core Technologies</span></div>
-      <div class="stat reveal"><strong data-count="5">0</strong><span>Data Science Areas</span></div>
-      <div class="stat reveal"><strong data-count="1">0</strong><span>BCA Graduate</span></div>
-    </section>
-
-    <section class="section two-col" id="about">
-      <div class="section-heading reveal"><p class="eyebrow">01 / ABOUT</p><h2>Turning <span>data</span> into decisions.</h2></div>
-      <div class="about-copy reveal">
-        <p>I am Jagdish Pravin Suryawanshi, a recently graduated BCA student building my career in Data Science and Analytics. I enjoy exploring datasets, finding patterns, creating visualizations, and developing machine learning solutions.</p>
-        <p>My learning journey focuses on Python, SQL, statistics, data cleaning, exploratory data analysis, machine learning, and business-focused data visualization.</p>
-        <div class="mini-grid">
-          <div><i class="fa-solid fa-broom"></i><b>Data Cleaning</b><span>Prepare reliable datasets</span></div>
-          <div><i class="fa-solid fa-magnifying-glass-chart"></i><b>EDA</b><span>Discover useful patterns</span></div>
-          <div><i class="fa-solid fa-brain"></i><b>ML</b><span>Build predictive models</span></div>
-          <div><i class="fa-solid fa-chart-pie"></i><b>Insights</b><span>Communicate findings</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="skills">
-      <div class="section-heading centered reveal"><p class="eyebrow">02 / SKILLS</p><h2>My <span>toolkit</span></h2><p>Technologies I use while learning and building data-driven projects.</p></div>
-      <div class="skill-grid">
-        <div class="skill-card reveal"><i class="fa-brands fa-python"></i><h3>Programming</h3><div class="chips"><span>Python</span><span>SQL</span><span>NumPy</span><span>Pandas</span></div></div>
-        <div class="skill-card reveal"><i class="fa-solid fa-chart-column"></i><h3>Visualization</h3><div class="chips"><span>Matplotlib</span><span>Seaborn</span><span>Power BI</span><span>Tableau</span></div></div>
-        <div class="skill-card reveal"><i class="fa-solid fa-brain"></i><h3>Machine Learning</h3><div class="chips"><span>Regression</span><span>Classification</span><span>Clustering</span><span>Scikit-learn</span></div></div>
-        <div class="skill-card reveal"><i class="fa-solid fa-screwdriver-wrench"></i><h3>Tools</h3><div class="chips"><span>Jupyter</span><span>Git</span><span>GitHub</span><span>VS Code</span><span>Excel</span></div></div>
-      </div>
-      <div class="bars">
-        <div class="bar reveal"><div><span>Python</span><b>85%</b></div><i><em style="width:85%"></em></i></div>
-        <div class="bar reveal"><div><span>SQL</span><b>80%</b></div><i><em style="width:80%"></em></i></div>
-        <div class="bar reveal"><div><span>Pandas / NumPy</span><b>82%</b></div><i><em style="width:82%"></em></i></div>
-        <div class="bar reveal"><div><span>Machine Learning</span><b>72%</b></div><i><em style="width:72%"></em></i></div>
-      </div>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="section-heading centered reveal"><p class="eyebrow">03 / PROJECTS</p><h2>Featured <span>work</span></h2><p>Practical projects demonstrating data analysis, visualization, SQL and machine learning.</p></div>
-      <div class="filters reveal">
-        <button class="filter active" data-filter="all">All</button><button class="filter" data-filter="python">Python</button>
-        <button class="filter" data-filter="sql">SQL</button><button class="filter" data-filter="ml">Machine Learning</button>
-        <button class="filter" data-filter="powerbi">Power BI</button><button class="filter" data-filter="analysis">Data Analysis</button>
-      </div>
-      <div class="project-grid">
-        <article class="project-card reveal" data-tags="python analysis"><div class="project-visual pv1"><i class="fa-solid fa-chart-simple"></i></div><div class="project-body"><small>01 / PYTHON • EDA</small><h3>Diwali Sales Analysis</h3><p>Analyzed customer purchasing behavior, sales trends, product categories and demographic patterns.</p><div class="tech">Python · Pandas · NumPy · Seaborn</div><button class="details-btn" data-project="0">View Details <i class="fa-solid fa-arrow-up-right-from-square"></i></button></div></article>
-        <article class="project-card reveal" data-tags="python analysis"><div class="project-visual pv2"><i class="fa-solid fa-shield-halved"></i></div><div class="project-body"><small>02 / PYTHON • CLEANING</small><h3>Crime Data Analysis</h3><p>Performed missing-value analysis, duplicate detection, filtering, grouping and exploratory analysis.</p><div class="tech">Python · Pandas · NumPy · Matplotlib</div><button class="details-btn" data-project="1">View Details <i class="fa-solid fa-arrow-up-right-from-square"></i></button></div></article>
-        <article class="project-card reveal" data-tags="powerbi analysis"><div class="project-visual pv3"><i class="fa-solid fa-chart-line"></i></div><div class="project-body"><small>03 / POWER BI • DASHBOARD</small><h3>Sales Dashboard</h3><p>Interactive dashboard concept for sales performance, revenue, products, regions and customer trends.</p><div class="tech">Power BI · Excel · Visualization</div><button class="details-btn" data-project="2">View Details <i class="fa-solid fa-arrow-up-right-from-square"></i></button></div></article>
-        <article class="project-card reveal" data-tags="python ml"><div class="project-visual pv4"><i class="fa-solid fa-robot"></i></div><div class="project-body"><small>04 / MACHINE LEARNING</small><h3>ML Prediction</h3><p>Machine-learning workflow covering preprocessing, feature engineering, training and evaluation.</p><div class="tech">Python · Pandas · Scikit-learn</div><button class="details-btn" data-project="3">View Details <i class="fa-solid fa-arrow-up-right-from-square"></i></button></div></article>
-        <article class="project-card reveal" data-tags="python ml"><div class="project-visual pv5"><i class="fa-solid fa-users-viewfinder"></i></div><div class="project-body"><small>05 / ML • CLUSTERING</small><h3>Customer Segmentation</h3><p>Segmented customers using behavioral and purchasing patterns to identify meaningful groups.</p><div class="tech">Python · Scikit-learn · K-Means</div><button class="details-btn" data-project="4">View Details <i class="fa-solid fa-arrow-up-right-from-square"></i></button></div></article>
-        <article class="project-card reveal" data-tags="sql analysis"><div class="project-visual pv6"><i class="fa-solid fa-database"></i></div><div class="project-body"><small>06 / SQL • ANALYTICS</small><h3>SQL Data Analysis</h3><p>Business-oriented SQL analysis using filtering, aggregation, subqueries and relational analysis.</p><div class="tech">SQL · MySQL</div><button class="details-btn" data-project="5">View Details <i class="fa-solid fa-arrow-up-right-from-square"></i></button></div></article>
-      </div>
-    </section>
-
-    <section class="section timeline-section" id="education">
-      <div class="section-heading reveal"><p class="eyebrow">04 / EDUCATION</p><h2>My <span>foundation</span></h2></div>
-      <div class="timeline reveal"><div class="timeline-dot"></div><div class="timeline-content"><span class="date">RECENTLY COMPLETED</span><h3>Bachelor of Computer Applications (BCA)</h3><p>Building a strong foundation in computer applications while developing practical skills in programming, databases and data science.</p><div class="placeholder-row"><span>University: Kavayitri Bahinabai Chaudhari North Maharashtra University</span><span>Graduation Year: 2026</span><span>CGPA / Percentage:9.00</span></div></div></div>
-      <div class="timeline reveal"><div class="timeline-dot"></div><div class="timeline-content"><span class="date">CURRENTLY PURSUING</span><h3>Master Of Computer Applications (MCA)</h3><p></p><div class="placeholder-row"><span>University: Kavayitri Bahinabai Chaudhari North Maharashtra University</span></div></div>
-  
-    </section>
-
-    <section class="section" id="experience">
-      <div class="section-heading centered reveal"><p class="eyebrow">05 / EXPERIENCE</p><h2>Project-based <span>experience</span></h2><p>Practical experience developed through hands-on Data Science and Analytics projects.</p></div>
-      <div class="experience-grid">
-        <div class="exp-card reveal"><span>01</span><i class="fa-solid fa-database"></i><h3>Data Cleaning</h3><p>Handling missing values, duplicates, inconsistent formats and messy datasets.</p></div>
-        <div class="exp-card reveal"><span>02</span><i class="fa-solid fa-magnifying-glass-chart"></i><h3>Exploratory Analysis</h3><p>Finding trends, relationships and patterns using Python-based analysis.</p></div>
-        <div class="exp-card reveal"><span>03</span><i class="fa-solid fa-chart-pie"></i><h3>Dashboard Development</h3><p>Designing clear dashboards and visual stories for business-focused insights.</p></div>
-        <div class="exp-card reveal"><span>04</span><i class="fa-solid fa-brain"></i><h3>Machine Learning</h3><p>Applying preprocessing, model training and evaluation to predictive problems.</p></div>
-      </div>
-    </section>
-
-    <section class="section" id="certifications">
-      <div class="section-heading centered reveal"><p class="eyebrow">06 / CERTIFICATIONS</p><h2>Learning & <span>certifications</span></h2></div>
-      <div class="cert-grid">
-        <div class="cert-card reveal"><i class="fa-brands fa-python"></i><h3>Python</h3><p>Certification details</p><span>Add organization / date / credential</span></div>
-        <div class="cert-card reveal"><i class="fa-solid fa-database"></i><h3>SQL</h3><p>Certification details</p><span>Add organization / date / credential</span></div>
-        <div class="cert-card reveal"><i class="fa-solid fa-chart-line"></i><h3>Data Science</h3><p>Certification details</p><span>Add organization / date / credential</span></div>
-        <div class="cert-card reveal"><i class="fa-solid fa-microchip"></i><h3>Machine Learning</h3><p>Certification details</p><span>Add organization / date / credential</span></div>
-      </div>
-    </section>
-
-    <section class="resume-cta section reveal">
-      <div><p class="eyebrow">LET'S CONNECT</p><h2>Want to know more about my journey?</h2><p>Explore my work, skills and learning journey through my resume.</p></div>
-      <a class="btn primary" href="assets/Jagdish_Suryawanshi_Resume.pdf" download>Download Resume <i class="fa-solid fa-download"></i></a>
-    </section>
-
-    <section class="section contact" id="contact">
-      <div class="section-heading reveal"><p class="eyebrow">07 / CONTACT</p><h2>Let's build something <span>smart.</span></h2><p>Have an opportunity, project or question? Send a message.</p></div>
-      <div class="contact-grid">
-        <form id="contactForm" class="contact-form reveal" method="POST"
-          action="https://script.google.com/macros/s/AKfycbzsMy5kRWWDOGG97D3vAkmblb6UXOHDPICiohUQjz3baVWyhh2Gi-yiLeORpcwcvwdTBA/exec"
-          target="contactSubmitFrame">
-          <div class="input-row">
-            <label>Name<input required type="text" name="name" placeholder="Your name" autocomplete="name"></label>
-            <label>Email<input required type="email" name="email" placeholder="you@example.com" autocomplete="email"></label>
+          <div class="photo-placeholder">
+            <i class="fa-solid fa-user"></i>
+            <span>Add your photo</span>
+            <small>assets/profile.jpg</small>
           </div>
-          <label>Subject<input required type="text" name="subject" placeholder="Let's talk about..."></label>
-          <label>Message<textarea required rows="6" name="message" placeholder="Write your message..."></textarea></label>
-          <button class="btn primary" type="submit">Send Message <i class="fa-solid fa-paper-plane"></i></button>
-          <p id="formMsg" class="form-msg"></p>
-        </form>
-        <iframe name="contactSubmitFrame" id="contactSubmitFrame" title="Hidden form submission" style="display:none;"></iframe>
-        <div class="contact-info reveal">
-          <div class="contact-item"><i class="fa-solid fa-envelope"></i><div><small>EMAIL</small><a href="mailto:jagdishsutyawanshi632005@gmail.com">jagdishsutyawanshi632005@gmail.com</a></div></div>
-          <div class="contact-item"><i class="fa-brands fa-linkedin-in"></i><div><small>LINKEDIN</small><a href="https://www.linkedin.com/in/jagdish-suryawanshi-9069403a/" target="_blank">LinkedIn Profile</a></div></div>
-          <div class="contact-item"><i class="fa-brands fa-github"></i><div><small>GITHUB</small><a href="https://github.com/jagdish211" target="_blank">GitHub Profile</a></div></div>
-          <div class="github-box"><div class="github-head"><i class="fa-brands fa-github"></i><strong>GitHub</strong></div><p>Connect your GitHub profile to showcase repositories, Python projects and Data Science work.</p><a href="https://github.com/jagdish211" target="_blank">Visit GitHub <i class="fa-solid fa-arrow-right"></i></a></div>
+
+          <div class="photo-tag">
+            <i class="fa-solid fa-chart-line"></i> DATA SCIENCE
+          </div>
+        </div>
+
+        <div class="float-card fc-one">
+          <i class="fa-brands fa-python"></i>
+          <span>Python</span>
+        </div>
+
+        <div class="float-card fc-two">
+          <i class="fa-solid fa-database"></i>
+          <span>SQL</span>
         </div>
       </div>
+
     </section>
+
+
+    <!-- STATS -->
+    <section class="stats section">
+
+      <div class="stat reveal">
+        <strong data-count="6">0</strong>
+        <span>Featured Projects</span>
+      </div>
+
+      <div class="stat reveal">
+        <strong data-count="10">0</strong>
+        <span>Core Technologies</span>
+      </div>
+
+      <div class="stat reveal">
+        <strong data-count="5">0</strong>
+        <span>Data Science Areas</span>
+      </div>
+
+      <div class="stat reveal">
+        <strong data-count="1">0</strong>
+        <span>BCA Graduate</span>
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="section two-col" id="about">
+
+      <div class="section-heading reveal">
+        <p class="eyebrow">01 / ABOUT</p>
+        <h2>Turning <span>data</span> into decisions.</h2>
+      </div>
+
+      <div class="about-copy reveal">
+
+        <p>
+          I am Jagdish Pravin Suryawanshi, a recently graduated BCA student building my career in Data Science and Analytics. I enjoy exploring datasets, finding patterns, creating visualizations, and developing machine learning solutions.
+        </p>
+
+        <p>
+          My learning journey focuses on Python, SQL, statistics, data cleaning, exploratory data analysis, machine learning, and business-focused data visualization.
+        </p>
+
+        <div class="mini-grid">
+
+          <div>
+            <i class="fa-solid fa-broom"></i>
+            <b>Data Cleaning</b>
+            <span>Prepare reliable datasets</span>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+            <b>EDA</b>
+            <span>Discover useful patterns</span>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-brain"></i>
+            <b>ML</b>
+            <span>Build predictive models</span>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-chart-pie"></i>
+            <b>Insights</b>
+            <span>Communicate findings</span>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">02 / SKILLS</p>
+        <h2>My <span>toolkit</span></h2>
+        <p>Technologies I use while learning and building data-driven projects.</p>
+      </div>
+
+      <div class="skill-grid">
+
+        <div class="skill-card reveal">
+          <i class="fa-brands fa-python"></i>
+          <h3>Programming</h3>
+          <div class="chips">
+            <span>Python</span>
+            <span>SQL</span>
+            <span>NumPy</span>
+            <span>Pandas</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <i class="fa-solid fa-chart-column"></i>
+          <h3>Visualization</h3>
+          <div class="chips">
+            <span>Matplotlib</span>
+            <span>Seaborn</span>
+            <span>Power BI</span>
+            <span>Tableau</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <i class="fa-solid fa-brain"></i>
+          <h3>Machine Learning</h3>
+          <div class="chips">
+            <span>Regression</span>
+            <span>Classification</span>
+            <span>Clustering</span>
+            <span>Scikit-learn</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <h3>Tools</h3>
+          <div class="chips">
+            <span>Jupyter</span>
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>VS Code</span>
+            <span>Excel</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="bars">
+
+        <div class="bar reveal">
+          <div><span>Python</span><b>85%</b></div>
+          <i><em style="width:85%"></em></i>
+        </div>
+
+        <div class="bar reveal">
+          <div><span>SQL</span><b>80%</b></div>
+          <i><em style="width:80%"></em></i>
+        </div>
+
+        <div class="bar reveal">
+          <div><span>Pandas / NumPy</span><b>82%</b></div>
+          <i><em style="width:82%"></em></i>
+        </div>
+
+        <div class="bar reveal">
+          <div><span>Machine Learning</span><b>72%</b></div>
+          <i><em style="width:72%"></em></i>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">03 / PROJECTS</p>
+        <h2>Featured <span>work</span></h2>
+        <p>Practical projects demonstrating data analysis, visualization, SQL and machine learning.</p>
+      </div>
+
+      <div class="filters reveal">
+
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="python">Python</button>
+        <button class="filter" data-filter="sql">SQL</button>
+        <button class="filter" data-filter="ml">Machine Learning</button>
+        <button class="filter" data-filter="powerbi">Power BI</button>
+        <button class="filter" data-filter="analysis">Data Analysis</button>
+
+      </div>
+
+
+      <div class="project-grid">
+
+        <!-- DIWALI SALES PROJECT -->
+        <article class="project-card reveal" data-tags="python analysis">
+
+          <div class="project-visual pv1">
+            <i class="fa-solid fa-chart-simple"></i>
+          </div>
+
+          <div class="project-body">
+
+            <small>01 / PYTHON • EDA</small>
+
+            <h3>Diwali Sales Analysis</h3>
+
+            <p>
+              Analyzed customer purchasing behavior, sales trends, product categories and demographic patterns.
+            </p>
+
+            <div class="tech">
+              Python · Pandas · NumPy · Seaborn
+            </div>
+
+            <button class="details-btn" data-project="0">
+              View Details
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </button>
+
+          </div>
+
+        </article>
+
+        <!--
+        <article class="project-card reveal" data-tags="python analysis">
+          <div class="project-visual pv2">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+
+          <div class="project-body">
+            <small>02 / PYTHON • CLEANING</small>
+            <h3>IPL Data Analysis</h3>
+            <p>Performed missing-value analysis, duplicate detection, filtering, grouping and exploratory analysis.</p>
+            <div class="tech">Python · Pandas · NumPy · Matplotlib</div>
+            <button class="details-btn" data-project="1">
+              View Details
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </button>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-tags="powerbi analysis">
+          <div class="project-visual pv3">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+
+          <div class="project-body">
+            <small>03 / POWER BI • DASHBOARD</small>
+            <h3>Sales Dashboard</h3>
+            <p>Interactive dashboard concept for sales performance, revenue, products, regions and customer trends.</p>
+            <div class="tech">Power BI · Excel · Visualization</div>
+            <button class="details-btn" data-project="2">
+              View Details
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </button>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-tags="python ml">
+          <div class="project-visual pv4">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+
+          <div class="project-body">
+            <small>04 / MACHINE LEARNING</small>
+            <h3>ML Prediction</h3>
+            <p>Machine-learning workflow covering preprocessing, feature engineering, training and evaluation.</p>
+            <div class="tech">Python · Pandas · Scikit-learn</div>
+            <button class="details-btn" data-project="3">
+              View Details
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </button>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-tags="python ml">
+          <div class="project-visual pv5">
+            <i class="fa-solid fa-users-viewfinder"></i>
+          </div>
+
+          <div class="project-body">
+            <small>05 / ML • CLUSTERING</small>
+            <h3>Customer Segmentation</h3>
+            <p>Segmented customers using behavioral and purchasing patterns to identify meaningful groups.</p>
+            <div class="tech">Python · Scikit-learn · K-Means</div>
+            <button class="details-btn" data-project="4">
+              View Details
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </button>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-tags="sql analysis">
+          <div class="project-visual pv6">
+            <i class="fa-solid fa-database"></i>
+          </div>
+
+          <div class="project-body">
+            <small>06 / SQL • ANALYTICS</small>
+            <h3>SQL Data Analysis</h3>
+            <p>Business-oriented SQL analysis using filtering, aggregation, subqueries and relational analysis.</p>
+            <div class="tech">SQL · MySQL</div>
+            <button class="details-btn" data-project="5">
+              View Details
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </button>
+          </div>
+        </article>
+      -->
+        
+
+      </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section class="section timeline-section" id="education">
+
+      <div class="section-heading reveal">
+        <p class="eyebrow">04 / EDUCATION</p>
+        <h2>My <span>foundation</span></h2>
+      </div>
+
+      <div class="timeline reveal">
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+          <span class="date">RECENTLY COMPLETED</span>
+
+          <h3>Bachelor of Computer Applications (BCA)</h3>
+
+          <p>
+            Building a strong foundation in computer applications while developing practical skills in programming, databases and data science.
+          </p>
+
+          <div class="placeholder-row">
+            <span>University: Kavayitri Bahinabai Chaudhari North Maharashtra University</span>
+            <span>Graduation Year: 2026</span>
+            <span>CGPA / Percentage:9.00</span>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="timeline reveal">
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+          <span class="date">CURRENTLY PURSUING</span>
+
+          <h3>Master Of Computer Applications (MCA)</h3>
+
+          <p></p>
+
+          <div class="placeholder-row">
+            <span>University: Kavayitri Bahinabai Chaudhari North Maharashtra University</span>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">05 / EXPERIENCE</p>
+        <h2>Project-based <span>experience</span></h2>
+        <p>Practical experience developed through hands-on Data Science and Analytics projects.</p>
+      </div>
+
+      <div class="experience-grid">
+
+        <div class="exp-card reveal">
+          <span>01</span>
+          <i class="fa-solid fa-database"></i>
+          <h3>Data Cleaning</h3>
+          <p>Handling missing values, duplicates, inconsistent formats and messy datasets.</p>
+        </div>
+
+        <div class="exp-card reveal">
+          <span>02</span>
+          <i class="fa-solid fa-magnifying-glass-chart"></i>
+          <h3>Exploratory Analysis</h3>
+          <p>Finding trends, relationships and patterns using Python-based analysis.</p>
+        </div>
+
+        <div class="exp-card reveal">
+          <span>03</span>
+          <i class="fa-solid fa-chart-pie"></i>
+          <h3>Dashboard Development</h3>
+          <p>Designing clear dashboards and visual stories for business-focused insights.</p>
+        </div>
+
+        <div class="exp-card reveal">
+          <span>04</span>
+          <i class="fa-solid fa-brain"></i>
+          <h3>Machine Learning</h3>
+          <p>Applying preprocessing, model training and evaluation to predictive problems.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CERTIFICATIONS -->
+    <section class="section" id="certifications">
+
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">06 / CERTIFICATIONS</p>
+        <h2>Learning & <span>certifications</span></h2>
+      </div>
+
+      <div class="cert-grid">
+
+        <div class="cert-card reveal">
+          <i class="fa-brands fa-python"></i>
+          <h3>Python</h3>
+          <p>Certification details</p>
+          <span>Add organization / date / credential</span>
+        </div>
+
+        <div class="cert-card reveal">
+          <i class="fa-solid fa-database"></i>
+          <h3>SQL</h3>
+          <p>Certification details</p>
+          <span>Add organization / date / credential</span>
+        </div>
+
+        <div class="cert-card reveal">
+          <i class="fa-solid fa-chart-line"></i>
+          <h3>Data Science</h3>
+          <p>Certification details</p>
+          <span>Add organization / date / credential</span>
+        </div>
+
+        <div class="cert-card reveal">
+          <i class="fa-solid fa-microchip"></i>
+          <h3>Machine Learning</h3>
+          <p>Certification details</p>
+          <span>Add organization / date / credential</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RESUME -->
+    <section class="resume-cta section reveal">
+
+      <div>
+        <p class="eyebrow">LET'S CONNECT</p>
+        <h2>Want to know more about my journey?</h2>
+        <p>Explore my work, skills and learning journey through my resume.</p>
+      </div>
+
+      <a class="btn primary" href="assets/Jagdish_Suryawanshi_Resume.pdf" download>
+        Download Resume
+        <i class="fa-solid fa-download"></i>
+      </a>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+
+      <div class="section-heading reveal">
+        <p class="eyebrow">07 / CONTACT</p>
+        <h2>Let's build something <span>smart.</span></h2>
+        <p>Have an opportunity, project or question? Send a message.</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <form id="contactForm"
+              class="contact-form reveal"
+              method="POST"
+              action="https://script.google.com/macros/s/AKfycbzsMy5kRWWDOGG97D3vAkmblb6UXOHDPICiohUQjz3baVWyhh2Gi-yiLeORpcwcvwdTBA/exec"
+              target="contactSubmitFrame">
+
+          <div class="input-row">
+
+            <label>
+              Name
+              <input required
+                     type="text"
+                     name="name"
+                     placeholder="Your name"
+                     autocomplete="name">
+            </label>
+
+            <label>
+              Email
+              <input required
+                     type="email"
+                     name="email"
+                     placeholder="you@example.com"
+                     autocomplete="email">
+            </label>
+
+          </div>
+
+          <label>
+            Subject
+            <input required
+                   type="text"
+                   name="subject"
+                   placeholder="Let's talk about...">
+          </label>
+
+          <label>
+            Message
+            <textarea required
+                      rows="6"
+                      name="message"
+                      placeholder="Write your message..."></textarea>
+          </label>
+
+          <button class="btn primary" type="submit">
+            Send Message
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+
+          <p id="formMsg" class="form-msg"></p>
+
+        </form>
+
+
+        <iframe name="contactSubmitFrame"
+                id="contactSubmitFrame"
+                title="Hidden form submission"
+                style="display:none;">
+        </iframe>
+
+
+        <div class="contact-info reveal">
+
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <small>EMAIL</small>
+              <a href="mailto:jagdishsutyawanshi632005@gmail.com">
+                jagdishsutyawanshi632005@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fa-brands fa-linkedin-in"></i>
+            <div>
+              <small>LINKEDIN</small>
+              <a href="https://www.linkedin.com/in/jagdish-suryawanshi-9069403a/"
+                 target="_blank">
+                LinkedIn Profile
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fa-brands fa-github"></i>
+            <div>
+              <small>GITHUB</small>
+              <a href="https://github.com/jagdish211" target="_blank">
+                GitHub Profile
+              </a>
+            </div>
+          </div>
+
+          <div class="github-box">
+
+            <div class="github-head">
+              <i class="fa-brands fa-github"></i>
+              <strong>GitHub</strong>
+            </div>
+
+            <p>
+              Connect your GitHub profile to showcase repositories, Python projects and Data Science work.
+            </p>
+
+            <a href="https://github.com/jagdish211" target="_blank">
+              Visit GitHub
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
 
-  <footer><div><a class="brand" href="#home"><span>J</span> Jagdish.</a><p>Data Scientist · Data Analyst · ML Enthusiast</p></div><div class="footer-links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div><button id="topBtn" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button><small>© <span id="year"></span> Jagdish Pravin Suryawanshi. All rights reserved.</small></footer>
 
-  <div class="modal" id="projectModal" aria-hidden="true"><div class="modal-box"><button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button><span class="eyebrow" id="modalTag"></span><h2 id="modalTitle"></h2><p id="modalDescription"></p><div class="modal-meta"><div><b>Dataset</b><span id="modalDataset"></span></div><div><b>Tools</b><span id="modalTools"></span></div><div><b>Methodology</b><span id="modalMethod"></span></div><div><b>Key Insight</b><span id="modalInsight"></span></div></div><a class="btn primary" href="https://github.com/" target="_blank">GitHub <i class="fa-brands fa-github"></i></a></div></div>
+  <!-- FOOTER -->
+  <footer>
+
+    <div>
+      <a class="brand" href="#home">
+        <span>J</span> Jagdish.
+      </a>
+
+      <p>Data Scientist · Data Analyst · ML Enthusiast</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <button id="topBtn" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <small>
+      © <span id="year"></span> Jagdish Pravin Suryawanshi. All rights reserved.
+    </small>
+
+  </footer>
+
+
+  <!-- PROJECT MODAL -->
+  <div class="modal" id="projectModal" aria-hidden="true">
+
+    <div class="modal-box">
+
+      <button class="modal-close" id="modalClose">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <span class="eyebrow" id="modalTag"></span>
+
+      <h2 id="modalTitle"></h2>
+
+      <p id="modalDescription"></p>
+
+      <div class="modal-meta">
+
+        <div>
+          <b>Dataset</b>
+          <span id="modalDataset"></span>
+        </div>
+
+        <div>
+          <b>Tools</b>
+          <span id="modalTools"></span>
+        </div>
+
+        <div>
+          <b>Methodology</b>
+          <span id="modalMethod"></span>
+        </div>
+
+        <div>
+          <b>Key Insight</b>
+          <span id="modalInsight"></span>
+        </div>
+
+      </div>
+
+      <!-- DIWALI SALES GITHUB LINK -->
+      <a class="btn primary"
+         href="https://github.com/jagdish211/EDA-Project-of-Diwali-Sales-Data"
+         target="_blank"
+         rel="noopener noreferrer">
+
+        GitHub
+        <i class="fa-brands fa-github"></i>
+        
+
+      </a>
+
+    </div>
+    </div>
+
+      <!-- DIWALI SALES GITHUB LINK -->
+      <a class="btn primary"
+         href="https://github.com/jagdish211/EDA-Project-of-Diwali-Sales-Data"
+         target="_blank"
+         rel="noopener noreferrer">
+
+        GitHub
+        <i class="fa-brands fa-github"></i>
+
+      </a>
+       <a class="btn primary"
+         href="https://github.com/jagdish211/EDA-Project-of-Diwali-Sales-Data"
+         target="_blank"
+         rel="noopener noreferrer">
+
+        GitHub
+        <i class="fa-brands fa-github"></i>
+
+      </a>
+
+    </div>
+
+  </div>
+  
+
+
   <script src="js/script.js"></script>
+
 </body>
 </html>
