@@ -113,7 +113,7 @@
       <div class="section-heading reveal"><p class="eyebrow">04 / EDUCATION</p><h2>My <span>foundation</span></h2></div>
       <div class="timeline reveal"><div class="timeline-dot"></div><div class="timeline-content"><span class="date">RECENTLY COMPLETED</span><h3>Bachelor of Computer Applications (BCA)</h3><p>Building a strong foundation in computer applications while developing practical skills in programming, databases and data science.</p><div class="placeholder-row"><span>University: Kavayitri Bahinabai Chaudhari North Maharashtra University</span><span>Graduation Year: 2026</span><span>CGPA / Percentage:9.00</span></div></div></div>
       <div class="timeline reveal"><div class="timeline-dot"></div><div class="timeline-content"><span class="date">CURRENTLY PURSUING</span><h3>Master Of Computer Applications (MCA)</h3><p></p><div class="placeholder-row"><span>University: Kavayitri Bahinabai Chaudhari North Maharashtra University</span></div></div>
-      <div class="timeline reveal"><div class="timeline-dot"></div><div class="timeline-content"><span class="date">CURRENTLY PURSUING</span><h3>Master Of Computer Applications (MCA)</h3><p></p><div class="placeholder-row"><span>University: Kavayitri Bahinabai Chaudhari North Maharashtra University</span></div></div>
+  
     </section>
 
     <section class="section" id="experience">
@@ -144,18 +144,24 @@
     <section class="section contact" id="contact">
       <div class="section-heading reveal"><p class="eyebrow">07 / CONTACT</p><h2>Let's build something <span>smart.</span></h2><p>Have an opportunity, project or question? Send a message.</p></div>
       <div class="contact-grid">
-        <form id="contactForm" class="contact-form reveal">
-          <div class="input-row"><label>Name<input required type="text" placeholder="Your name"></label><label>Email<input required type="email" placeholder="you@example.com"></label></div>
-          <label>Subject<input required type="text" placeholder="Let's talk about..."></label>
-          <label>Message<textarea required rows="6" placeholder="Write your message..."></textarea></label>
+        <form id="contactForm" class="contact-form reveal" method="POST"
+          action="https://script.google.com/macros/s/AKfycbzsMy5kRWWDOGG97D3vAkmblb6UXOHDPICiohUQjz3baVWyhh2Gi-yiLeORpcwcvwdTBA/exec"
+          target="contactSubmitFrame">
+          <div class="input-row">
+            <label>Name<input required type="text" name="name" placeholder="Your name" autocomplete="name"></label>
+            <label>Email<input required type="email" name="email" placeholder="you@example.com" autocomplete="email"></label>
+          </div>
+          <label>Subject<input required type="text" name="subject" placeholder="Let's talk about..."></label>
+          <label>Message<textarea required rows="6" name="message" placeholder="Write your message..."></textarea></label>
           <button class="btn primary" type="submit">Send Message <i class="fa-solid fa-paper-plane"></i></button>
           <p id="formMsg" class="form-msg"></p>
         </form>
+        <iframe name="contactSubmitFrame" id="contactSubmitFrame" title="Hidden form submission" style="display:none;"></iframe>
         <div class="contact-info reveal">
-          <div class="contact-item"><i class="fa-solid fa-envelope"></i><div><small>EMAIL</small><a href="mailto:mailto:jagdishsutyawanshi632005@gmail.com">jagdishsutyawanshi632005@gmail.com</a></div></div>
-          <div class="contact-item"><i class="fa-brands fa-linkedin-in"></i><div><small>LINKEDIN</small><a href="https://www.linkedin.com/" target="_blank">LinkedIn Profile</a></div></div>
-          <div class="contact-item"><i class="fa-brands fa-github"></i><div><small>GITHUB</small><a href="https://github.com/" target="_blank">GitHub Profile</a></div></div>
-          <div class="github-box"><div class="github-head"><i class="fa-brands fa-github"></i><strong>GitHub</strong></div><p>Connect your GitHub profile to showcase repositories, Python projects and Data Science work.</p><a href="https://github.com/" target="_blank">Visit GitHub <i class="fa-solid fa-arrow-right"></i></a></div>
+          <div class="contact-item"><i class="fa-solid fa-envelope"></i><div><small>EMAIL</small><a href="mailto:jagdishsutyawanshi632005@gmail.com">jagdishsutyawanshi632005@gmail.com</a></div></div>
+          <div class="contact-item"><i class="fa-brands fa-linkedin-in"></i><div><small>LINKEDIN</small><a href="https://www.linkedin.com/in/jagdish-suryawanshi-9069403a/" target="_blank">LinkedIn Profile</a></div></div>
+          <div class="contact-item"><i class="fa-brands fa-github"></i><div><small>GITHUB</small><a href="https://github.com/jagdish211" target="_blank">GitHub Profile</a></div></div>
+          <div class="github-box"><div class="github-head"><i class="fa-brands fa-github"></i><strong>GitHub</strong></div><p>Connect your GitHub profile to showcase repositories, Python projects and Data Science work.</p><a href="https://github.com/jagdish211" target="_blank">Visit GitHub <i class="fa-solid fa-arrow-right"></i></a></div>
         </div>
       </div>
     </section>

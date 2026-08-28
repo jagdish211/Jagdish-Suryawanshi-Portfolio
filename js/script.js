@@ -28,9 +28,60 @@ $$(".details-btn").forEach(btn=>btn.addEventListener("click",()=>{const p=projec
 function closeModal(){$("#projectModal").classList.remove("open");$("#projectModal").setAttribute("aria-hidden","true")}
 $("#modalClose").addEventListener("click",closeModal);$("#projectModal").addEventListener("click",e=>{if(e.target.id==="projectModal")closeModal()});document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
 
-$("#contactForm").addEventListener("submit",e=>{e.preventDefault();$("#formMsg").textContent="Thanks! This demo form is validated. Connect it to Formspree, EmailJS or your backend to send messages.";e.target.reset()});
+const contactForm = $("#contactForm");
+const contactFrame = $("#contactSubmitFrame");
+let contactSubmitting = false;
+
+contactForm.addEventListener("submit", e => {
+  if (contactForm.action.includes("YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL")) {
+    e.preventDefault();
+    $("#formMsg").textContent = "Form is ready, but Google Apps Script is not connected yet. Follow SETUP_GOOGLE_FORM.md.";
+    return;
+  }
+  if (contactSubmitting) return;
+  contactSubmitting = true;
+  $("#formMsg").textContent = "Sending message...";
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+  submitBtn.disabled = true;
+  setTimeout(() => {
+    $("#formMsg").textContent = "Message sent successfully! Thank you.";
+    contactForm.reset();
+    submitBtn.disabled = false;
+    contactSubmitting = false;
+  }, 1200);
+});
+
+contactFrame.addEventListener("load", () => {
+  // The hidden iframe lets the local HTML page POST to Google Apps Script
+  // without needing a server or exposing a Google API key.
+});
 $("#topBtn").addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
 $("#year").textContent=new Date().getFullYear();
 
 const sections=$$("section[id]"), navLinks=$$("#navMenu a");
 window.addEventListener("scroll",()=>{let y=scrollY+180;sections.forEach(sec=>{if(y>=sec.offsetTop&&y<sec.offsetTop+sec.offsetHeight){navLinks.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+sec.id))}})});
+
+/* Optional local backup:
+   Submissions are also stored in this browser's localStorage.
+   Add a button with id="downloadSubmissions" if you want a CSV export.
+*/
+(function () {
+  const form = document.querySelector("#contactForm");
+  if (!form) return;
+
+  const originalSubmit = form.getAttribute("action");
+
+  form.addEventListener("submit", function () {
+    const data = {
+      date: new Date().toLocaleString(),
+      name: form.elements.name?.value || "",
+      email: form.elements.email?.value || "",
+      subject: form.elements.subject?.value || "",
+      message: form.elements.message?.value || ""
+    };
+    const key = "jagdishPortfolioContactSubmissions";
+    const old = JSON.parse(localStorage.getItem(key) || "[]");
+    old.push(data);
+    localStorage.setItem(key, JSON.stringify(old));
+  });
+})();

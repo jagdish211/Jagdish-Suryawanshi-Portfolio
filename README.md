@@ -32,3 +32,7 @@ Update GitHub, LinkedIn and email links in `index.html`.
 
 ## Run
 Open `index.html` in a browser. No server is required.
+
+
+## Contact form backend
+See `SETUP_GOOGLE_FORM.md` to connect the Contact form to Google Sheets and Gmail notifications. The `google-apps-script/Code.gs` file is the backend.
