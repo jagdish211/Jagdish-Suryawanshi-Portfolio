@@ -1,87 +1,407 @@
-const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+const $ = (selector, scope = document) => scope.querySelector(selector);
+const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
 
-const themeBtn=$("#themeBtn"), body=document.body;
-themeBtn.addEventListener("click",()=>{body.classList.toggle("light");localStorage.setItem("theme",body.classList.contains("light")?"light":"dark");themeBtn.innerHTML=body.classList.contains("light")?'<i class="fa-solid fa-moon"></i>':'<i class="fa-solid fa-sun"></i>'});
-if(localStorage.getItem("theme")==="light"){body.classList.add("light");themeBtn.innerHTML='<i class="fa-solid fa-moon"></i>'}
-
-$("#menuBtn").addEventListener("click",()=>$("#navMenu").classList.toggle("open"));
-$$('#navMenu a').forEach(a=>a.addEventListener("click",()=>$("#navMenu").classList.remove("open")));
-
-const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")}),{threshold:.12});
-$$(".reveal").forEach(el=>observer.observe(el));
-
-let counted=false;
-const statObs=new IntersectionObserver(entries=>{if(entries[0].isIntersecting&&!counted){counted=true;$$("[data-count]").forEach(el=>{let end=+el.dataset.count,n=0,step=Math.max(1,Math.ceil(end/25));const t=setInterval(()=>{n+=step;if(n>=end){n=end;clearInterval(t)}el.textContent=n+"+"},45)})}},{threshold:.5});
-statObs.observe($(".stats"));
-
-$$(".filter").forEach(btn=>btn.addEventListener("click",()=>{ $$(".filter").forEach(b=>b.classList.remove("active"));btn.classList.add("active");const f=btn.dataset.filter;$$(".project-card").forEach(card=>{card.style.display=(f==="all"||card.dataset.tags.split(" ").includes(f))?"block":"none"})}));
-
-const projects=[
-["01 / PYTHON • EDA","Diwali Sales Analysis","Analyzed customer purchasing behavior, sales trends, product categories and demographic patterns.","Diwali Sales dataset","Python, Pandas, NumPy, Matplotlib, Seaborn","EDA → cleaning → visualization → insights"],
-["02 / PYTHON • CLEANING","Crime Data Analysis","Explored a messy crime dataset with cleaning and exploratory techniques.","Messy Crime dataset","Python, Pandas, NumPy, Matplotlib","Missing values → duplicates → filtering → grouping"],
-["03 / POWER BI • DASHBOARD","Sales Dashboard","Designed an interactive dashboard for sales performance and business trends.","Sales dataset","Power BI, Excel, Visualization","Data preparation → KPIs → dashboard → insights"],
-["04 / MACHINE LEARNING","ML Prediction","Built a machine-learning workflow covering preprocessing, feature engineering, training and evaluation.","Prediction dataset","Python, Pandas, Scikit-learn","Preprocess → engineer features → train → evaluate"],
-["05 / ML • CLUSTERING","Customer Segmentation","Segmented customers using behavioral and purchasing patterns.","Customer dataset","Python, Scikit-learn, K-Means","Prepare → scale → cluster → interpret"],
-["06 / SQL • ANALYTICS","SQL Data Analysis","Performed business-oriented relational analysis using SQL.","SQL business dataset","SQL, MySQL","Filter → aggregate → subquery → analyze"]
+/* =========================================================
+   PROJECT DATABASE
+   Add future projects HERE only.
+   Every project gets its own GitHub URL.
+   ========================================================= */
+const projects = [
+  {
+    number: "01",
+    category: "PYTHON • EDA",
+    title: "Diwali Sales Analysis",
+    description: "Analyzed customer purchasing behavior, sales trends, product categories and demographic patterns to discover useful business insights.",
+    tags: ["python", "analysis"],
+    icon: "fa-chart-simple",
+    visual: "pv1",
+    dataset: "Diwali Sales dataset",
+    tools: "Python · Pandas · NumPy · Matplotlib · Seaborn",
+    methodology: "EDA → cleaning → visualization → insights",
+    insight: "Identified purchasing patterns across customer demographics, product categories and sales behavior.",
+    github: "https://github.com/jagdish211/EDA-Project-of-Diwali-Sales-Data"
+  },
+  {
+    number: "02",
+    category: "PYTHON • EDA",
+    title: "IPL Data Analysis",
+    description: "Performed missing-value analysis, duplicate detection, filtering, grouping and exploratory analysis on IPL data.",
+    tags: ["python", "analysis"],
+    icon: "fa-chart-line",
+    visual: "pv2",
+    dataset: "IPL dataset",
+    tools: "Python · Pandas · NumPy · Matplotlib",
+    methodology: "Cleaning → filtering → grouping → exploratory analysis",
+    insight: "Explored team, match and player-level patterns to understand IPL performance trends.",
+    github: "https://github.com/jagdish211/IPL-Data-EDA-PRoject"
+  },
+  {
+    number: "03",
+    category: "POWER BI • DASHBOARD",
+    title: "Sales Dashboard",
+    description: "Designed an interactive dashboard for sales performance, revenue, products, regions and customer trends.",
+    tags: ["powerbi", "analysis"],
+    icon: "fa-chart-column",
+    visual: "pv3",
+    dataset: "Sales dataset",
+    tools: "Power BI · Excel · Data Visualization",
+    methodology: "Data preparation → KPIs → dashboard → insights",
+    insight: "Created an interactive view of key sales KPIs and business trends.",
+    github: "https://github.com/YOUR_USERNAME/YOUR_SALES_DASHBOARD_REPOSITORY"
+  },
+  {
+    number: "04",
+    category: "MACHINE LEARNING",
+    title: "ML Prediction",
+    description: "Built a machine-learning workflow covering preprocessing, feature engineering, training and evaluation.",
+    tags: ["python", "ml"],
+    icon: "fa-robot",
+    visual: "pv4",
+    dataset: "Prediction dataset",
+    tools: "Python · Pandas · Scikit-learn",
+    methodology: "Preprocess → engineer features → train → evaluate",
+    insight: "Built a reusable predictive-model workflow from raw data through model evaluation.",
+    github: "https://github.com/YOUR_USERNAME/YOUR_ML_REPOSITORY"
+  },
+  {
+    number: "05",
+    category: "ML • CLUSTERING",
+    title: "Customer Segmentation",
+    description: "Segmented customers using behavioral and purchasing patterns to identify meaningful groups.",
+    tags: ["python", "ml"],
+    icon: "fa-users-viewfinder",
+    visual: "pv5",
+    dataset: "Customer dataset",
+    tools: "Python · Scikit-learn · K-Means",
+    methodology: "Prepare → scale → cluster → interpret",
+    insight: "Identified customer groups based on behavioral and purchasing characteristics.",
+    github: "https://github.com/YOUR_USERNAME/YOUR_CUSTOMER_SEGMENTATION_REPOSITORY"
+  },
+  {
+    number: "06",
+    category: "SQL • ANALYTICS",
+    title: "SQL Data Analysis",
+    description: "Performed business-oriented relational analysis using filtering, aggregation, subqueries and SQL analysis.",
+    tags: ["sql", "analysis"],
+    icon: "fa-database",
+    visual: "pv6",
+    dataset: "SQL business dataset",
+    tools: "SQL · MySQL",
+    methodology: "Filter → aggregate → subquery → analyze",
+    insight: "Used relational queries to answer business-focused analytical questions.",
+    github: "https://github.com/YOUR_USERNAME/YOUR_SQL_REPOSITORY"
+  }
 ];
-$$(".details-btn").forEach(btn=>btn.addEventListener("click",()=>{const p=projects[+btn.dataset.project];$("#modalTag").textContent=p[0];$("#modalTitle").textContent=p[1];$("#modalDescription").textContent=p[2];$("#modalDataset").textContent=p[3];$("#modalTools").textContent=p[4];$("#modalMethod").textContent=p[5];$("#modalInsight").textContent="Add your final project-specific findings and measurable results here.";$("#projectModal").classList.add("open");$("#projectModal").setAttribute("aria-hidden","false")}));
-function closeModal(){$("#projectModal").classList.remove("open");$("#projectModal").setAttribute("aria-hidden","true")}
-$("#modalClose").addEventListener("click",closeModal);$("#projectModal").addEventListener("click",e=>{if(e.target.id==="projectModal")closeModal()});document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
 
+/* =========================================================
+   THEME
+   ========================================================= */
+const themeBtn = $("#themeBtn");
+const body = document.body;
+
+function updateThemeIcon() {
+  if (!themeBtn) return;
+  themeBtn.innerHTML = body.classList.contains("light")
+    ? '<i class="fa-solid fa-moon"></i>'
+    : '<i class="fa-solid fa-sun"></i>';
+}
+
+if (localStorage.getItem("theme") === "light") body.classList.add("light");
+updateThemeIcon();
+
+themeBtn?.addEventListener("click", () => {
+  body.classList.toggle("light");
+  localStorage.setItem("theme", body.classList.contains("light") ? "light" : "dark");
+  updateThemeIcon();
+});
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+const menuBtn = $("#menuBtn");
+const navMenu = $("#navMenu");
+
+menuBtn?.addEventListener("click", () => navMenu?.classList.toggle("open"));
+$$('#navMenu a').forEach(link => link.addEventListener("click", () => navMenu?.classList.remove("open")));
+
+/* =========================================================
+   PROJECT RENDERING
+   ========================================================= */
+const projectGrid = $("#projectGrid");
+const projectCount = $("#projectCount");
+
+function renderProjects(filter = "all") {
+  if (!projectGrid) return;
+
+  const visibleProjects = projects.filter(project =>
+    filter === "all" || project.tags.includes(filter)
+  );
+
+  projectGrid.innerHTML = visibleProjects.map(project => {
+    const originalIndex = projects.indexOf(project);
+    return `
+      <article class="project-card reveal" data-tags="${project.tags.join(" ")}">
+        <div class="project-visual ${project.visual}">
+          <span class="project-number">${project.number}</span>
+          <i class="fa-solid ${project.icon}"></i>
+          <span class="project-glow"></span>
+        </div>
+
+        <div class="project-body">
+          <small>${project.number} / ${project.category}</small>
+          <h3>${project.title}</h3>
+          <p>${project.description}</p>
+
+          <div class="project-tags">
+            ${project.tags.map(tag => `<span>${formatTag(tag)}</span>`).join("")}
+          </div>
+
+          <div class="tech">${project.tools}</div>
+
+          <div class="project-actions">
+            <button class="details-btn" type="button" data-project="${originalIndex}">
+              View Details <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </button>
+            <a class="project-github" href="${project.github}" target="_blank" rel="noopener noreferrer" aria-label="Open ${project.title} GitHub repository">
+              GitHub <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+    `;
+  }).join("");
+
+  if (projectCount) projectCount.dataset.count = projects.length;
+  observeReveals();
+  bindProjectButtons();
+}
+
+function formatTag(tag) {
+  const labels = {
+    python: "Python",
+    sql: "SQL",
+    ml: "Machine Learning",
+    powerbi: "Power BI",
+    analysis: "Data Analysis"
+  };
+  return labels[tag] || tag;
+}
+
+function bindProjectButtons() {
+  $$(".details-btn").forEach(button => {
+    button.addEventListener("click", () => openProjectModal(Number(button.dataset.project)));
+  });
+}
+
+/* =========================================================
+   PROJECT MODAL — GitHub URL is taken from project.github
+   ========================================================= */
+const modal = $("#projectModal");
+const modalGitHub = $("#modalGitHub");
+
+function openProjectModal(index) {
+  const project = projects[index];
+  if (!project || !modal) return;
+
+  $("#modalTag").textContent = `${project.number} / ${project.category}`;
+  $("#modalTitle").textContent = project.title;
+  $("#modalDescription").textContent = project.description;
+  $("#modalDataset").textContent = project.dataset;
+  $("#modalTools").textContent = project.tools;
+  $("#modalMethod").textContent = project.methodology;
+  $("#modalInsight").textContent = project.insight;
+
+  /* THIS is the important part: each project gets its own URL. */
+  modalGitHub.href = project.github;
+
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+  body.classList.add("modal-open");
+}
+
+function closeModal() {
+  modal?.classList.remove("open");
+  modal?.setAttribute("aria-hidden", "true");
+  body.classList.remove("modal-open");
+}
+
+$("#modalClose")?.addEventListener("click", closeModal);
+modal?.addEventListener("click", event => {
+  if (event.target === modal) closeModal();
+});
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closeModal();
+});
+
+/* =========================================================
+   FILTERS
+   ========================================================= */
+$$('.filter').forEach(button => {
+  button.addEventListener("click", () => {
+    $$('.filter').forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+    renderProjects(button.dataset.filter || "all");
+  });
+});
+
+/* =========================================================
+   REVEAL ANIMATIONS
+   ========================================================= */
+let revealObserver;
+function observeReveals() {
+  if (!revealObserver) {
+    revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.12 });
+  }
+
+  $$(".reveal:not(.visible)").forEach(element => revealObserver.observe(element));
+}
+observeReveals();
+
+/* =========================================================
+   STATS
+   ========================================================= */
+let counted = false;
+const statsSection = $(".stats");
+
+if (statsSection) {
+  const statObserver = new IntersectionObserver(entries => {
+    if (!entries[0].isIntersecting || counted) return;
+    counted = true;
+
+    $$('[data-count]').forEach(element => {
+      const end = Number(element.dataset.count) || 0;
+      let current = 0;
+      const step = Math.max(1, Math.ceil(end / 25));
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= end) {
+          current = end;
+          clearInterval(timer);
+        }
+        element.textContent = `${current}+`;
+      }, 45);
+    });
+  }, { threshold: 0.5 });
+
+  statObserver.observe(statsSection);
+}
+
+/* =========================================================
+   TYPING EFFECT
+   ========================================================= */
+const typingTarget = $("#typingText");
+if (typingTarget) {
+  const words = ["Data Scientist.", "Data Analyst.", "ML Enthusiast."];
+  let wordIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+
+  function type() {
+    const word = words[wordIndex];
+    typingTarget.textContent = word.slice(0, charIndex);
+
+    if (!deleting && charIndex < word.length) {
+      charIndex++;
+      setTimeout(type, 90);
+    } else if (!deleting && charIndex === word.length) {
+      deleting = true;
+      setTimeout(type, 1500);
+    } else if (deleting && charIndex > 0) {
+      charIndex--;
+      setTimeout(type, 45);
+    } else {
+      deleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      setTimeout(type, 350);
+    }
+  }
+  type();
+}
+
+/* =========================================================
+   CONTACT FORM
+   ========================================================= */
 const contactForm = $("#contactForm");
 const contactFrame = $("#contactSubmitFrame");
 let contactSubmitting = false;
 
-contactForm.addEventListener("submit", e => {
+contactForm?.addEventListener("submit", event => {
   if (contactForm.action.includes("YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL")) {
-    e.preventDefault();
+    event.preventDefault();
     $("#formMsg").textContent = "Form is ready, but Google Apps Script is not connected yet. Follow SETUP_GOOGLE_FORM.md.";
     return;
   }
-  if (contactSubmitting) return;
+
+  if (contactSubmitting) {
+    event.preventDefault();
+    return;
+  }
+
   contactSubmitting = true;
   $("#formMsg").textContent = "Sending message...";
-  const submitBtn = contactForm.querySelector('button[type="submit"]');
-  submitBtn.disabled = true;
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  if (submitButton) submitButton.disabled = true;
+
   setTimeout(() => {
     $("#formMsg").textContent = "Message sent successfully! Thank you.";
     contactForm.reset();
-    submitBtn.disabled = false;
+    if (submitButton) submitButton.disabled = false;
     contactSubmitting = false;
   }, 1200);
+
+  const data = {
+    date: new Date().toLocaleString(),
+    name: contactForm.elements.name?.value || "",
+    email: contactForm.elements.email?.value || "",
+    subject: contactForm.elements.subject?.value || "",
+    message: contactForm.elements.message?.value || ""
+  };
+  const key = "jagdishPortfolioContactSubmissions";
+  const old = JSON.parse(localStorage.getItem(key) || "[]");
+  old.push(data);
+  localStorage.setItem(key, JSON.stringify(old));
 });
 
-contactFrame.addEventListener("load", () => {
-  // The hidden iframe lets the local HTML page POST to Google Apps Script
-  // without needing a server or exposing a Google API key.
-});
-$("#topBtn").addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
-$("#year").textContent=new Date().getFullYear();
+contactFrame?.addEventListener("load", () => {});
 
-const sections=$$("section[id]"), navLinks=$$("#navMenu a");
-window.addEventListener("scroll",()=>{let y=scrollY+180;sections.forEach(sec=>{if(y>=sec.offsetTop&&y<sec.offsetTop+sec.offsetHeight){navLinks.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+sec.id))}})});
+/* =========================================================
+   BACK TO TOP + YEAR + ACTIVE NAV
+   ========================================================= */
+$("#topBtn")?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+if ($("#year")) $("#year").textContent = new Date().getFullYear();
 
-/* Optional local backup:
-   Submissions are also stored in this browser's localStorage.
-   Add a button with id="downloadSubmissions" if you want a CSV export.
-*/
-(function () {
-  const form = document.querySelector("#contactForm");
-  if (!form) return;
+const sections = $$('section[id]');
+const navLinks = $$('#navMenu a');
 
-  const originalSubmit = form.getAttribute("action");
-
-  form.addEventListener("submit", function () {
-    const data = {
-      date: new Date().toLocaleString(),
-      name: form.elements.name?.value || "",
-      email: form.elements.email?.value || "",
-      subject: form.elements.subject?.value || "",
-      message: form.elements.message?.value || ""
-    };
-    const key = "jagdishPortfolioContactSubmissions";
-    const old = JSON.parse(localStorage.getItem(key) || "[]");
-    old.push(data);
-    localStorage.setItem(key, JSON.stringify(old));
+window.addEventListener("scroll", () => {
+  const y = window.scrollY + 180;
+  sections.forEach(section => {
+    if (y >= section.offsetTop && y < section.offsetTop + section.offsetHeight) {
+      navLinks.forEach(link => {
+        link.classList.toggle("active", link.getAttribute("href") === `#${section.id}`);
+      });
+    }
   });
-})();
+}, { passive: true });
+
+/* =========================================================
+   SUBTLE CURSOR GLOW
+   ========================================================= */
+const cursorGlow = document.createElement("div");
+cursorGlow.className = "cursor-glow";
+document.body.appendChild(cursorGlow);
+
+if (window.matchMedia("(pointer:fine)").matches) {
+  window.addEventListener("pointermove", event => {
+    cursorGlow.style.transform = `translate3d(${event.clientX - 160}px, ${event.clientY - 160}px, 0)`;
+  }, { passive: true });
+} else {
+  cursorGlow.remove();
+}
+
+/* Render projects after all functions are ready. */
+renderProjects();

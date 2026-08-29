@@ -55,7 +55,7 @@
 
         <h1>
           Hi, I'm <span>Jagdish</span>.<br>
-          <strong>Data Scientist.</strong>
+          <strong id="typingText">Data Scientist.</strong>
         </h1>
 
         <p class="hero-text">
@@ -77,7 +77,7 @@
             <i class="fa-brands fa-github"></i>
           </a>
 
-          <a href="https://www.linkedin.com/in/jagdish-suryawanshi-9069403a0//" target="_blank" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/jagdish-suryawanshi-9069403a0/" target="_blank" aria-label="LinkedIn">
             <i class="fa-brands fa-linkedin-in"></i>
           </a>
 
@@ -124,7 +124,7 @@
     <section class="stats section">
 
       <div class="stat reveal">
-        <strong data-count="6">0</strong>
+        <strong id="projectCount" data-count="6">0</strong>
         <span>Featured Projects</span>
       </div>
 
@@ -302,39 +302,40 @@
       </div>
 
 
-      <div class="project-grid">
+      <div class="project-grid" id="projectGrid"></div>
 
-        <!-- DIWALI SALES PROJECT -->
-        <article class="project-card reveal" data-tags="python analysis">
+        
+<article class="project-card reveal" data-tags="python analysis">
 
-          <div class="project-visual pv1">
-            <i class="fa-solid fa-chart-simple"></i>
-          </div>
+  <div class="project-visual pv1">
+    <i class="fa-solid fa-chart-simple"></i>
+  </div>
 
-          <div class="project-body">
+  <div class="project-body">
 
-            <small>01 / PYTHON • EDA</small>
+    <small>01 / PYTHON • EDA</small>
 
-            <h3>Diwali Sales Analysis</h3>
+    <h3>Diwali Sales Analysis</h3>
 
-            <p>
-              Analyzed customer purchasing behavior, sales trends, product categories and demographic patterns.
-            </p>
+    <p>
+      Analyzed customer purchasing behavior, sales trends, product categories and demographic patterns.
+    </p>
 
-            <div class="tech">
-              Python · Pandas · NumPy · Seaborn
-            </div>
+    <div class="tech">
+      Python · Pandas · NumPy · Seaborn
+    </div>
 
-            <button class="details-btn" data-project="0">
-              View Details
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </button>
+    <button class="details-btn" data-project="0">
+      View Details
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </button>
 
-          </div>
+  </div>
 
-        </article>
+</article>
 
-        <!--
+
+    
         <article class="project-card reveal" data-tags="python analysis">
           <div class="project-visual pv2">
             <i class="fa-solid fa-shield-halved"></i>
@@ -419,13 +420,13 @@
             </button>
           </div>
         </article>
-      -->
+      
         
 
       </div>
 
     </section>
-
+  
 
     <!-- EDUCATION -->
     <section class="section timeline-section" id="education">
@@ -457,7 +458,7 @@
       </div>
 
 
-      <div class="timeline reveal">
+      <<!--div class="timeline reveal">
         <div class="timeline-dot"></div>
 
         <div class="timeline-content">
@@ -669,7 +670,7 @@
             <i class="fa-brands fa-linkedin-in"></i>
             <div>
               <small>LINKEDIN</small>
-              <a href="https://www.linkedin.com/in/jagdish-suryawanshi-9069403a/"
+              <a href="https://www.linkedin.com/in/jagdish-suryawanshi-9069403a0/"
                  target="_blank">
                 LinkedIn Profile
               </a>
@@ -743,83 +744,27 @@
 
   <!-- PROJECT MODAL -->
   <div class="modal" id="projectModal" aria-hidden="true">
-
     <div class="modal-box">
-
-      <button class="modal-close" id="modalClose">
+      <button class="modal-close" id="modalClose" aria-label="Close project details">
         <i class="fa-solid fa-xmark"></i>
       </button>
 
       <span class="eyebrow" id="modalTag"></span>
-
       <h2 id="modalTitle"></h2>
-
       <p id="modalDescription"></p>
 
       <div class="modal-meta">
-
-        <div>
-          <b>Dataset</b>
-          <span id="modalDataset"></span>
-        </div>
-
-        <div>
-          <b>Tools</b>
-          <span id="modalTools"></span>
-        </div>
-
-        <div>
-          <b>Methodology</b>
-          <span id="modalMethod"></span>
-        </div>
-
-        <div>
-          <b>Key Insight</b>
-          <span id="modalInsight"></span>
-        </div>
-
+        <div><b>Dataset</b><span id="modalDataset"></span></div>
+        <div><b>Tools</b><span id="modalTools"></span></div>
+        <div><b>Methodology</b><span id="modalMethod"></span></div>
+        <div><b>Key Insight</b><span id="modalInsight"></span></div>
       </div>
 
-      <!-- DIWALI SALES GITHUB LINK -->
-      <a class="btn primary"
-         href="https://github.com/jagdish211/EDA-Project-of-Diwali-Sales-Data"
-         target="_blank"
-         rel="noopener noreferrer">
-
-        GitHub
-        <i class="fa-brands fa-github"></i>
-        
-
+      <a class="btn primary github-modal-btn" id="modalGitHub" href="#" target="_blank" rel="noopener noreferrer">
+        View on GitHub <i class="fa-brands fa-github"></i>
       </a>
-
     </div>
-    </div>
-
-      <!-- DIWALI SALES GITHUB LINK -->
-      <a class="btn primary"
-         href="https://github.com/jagdish211/EDA-Project-of-Diwali-Sales-Data"
-         target="_blank"
-         rel="noopener noreferrer">
-
-        GitHub
-        <i class="fa-brands fa-github"></i>
-
-      </a>
-       <a class="btn primary"
-         href="https://github.com/jagdish211/EDA-Project-of-Diwali-Sales-Data"
-         target="_blank"
-         rel="noopener noreferrer">
-
-        GitHub
-        <i class="fa-brands fa-github"></i>
-
-      </a>
-
-    </div>
-
   </div>
-  
-
 
   <script src="js/script.js"></script>
 
