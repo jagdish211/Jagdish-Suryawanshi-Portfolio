@@ -7,7 +7,7 @@ const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)]
    Every project gets its own GitHub URL.
    ========================================================= */
 const projects = [
-  {
+  /*{
     number: "01",
     category: "PYTHON • EDA",
     title: "Diwali Sales Analysis",
@@ -20,7 +20,7 @@ const projects = [
     methodology: "EDA → cleaning → visualization → insights",
     insight: "Identified purchasing patterns across customer demographics, product categories and sales behavior.",
     github: "https://github.com/jagdish211/EDA-Project-of-Diwali-Sales-Data"
-  },
+  },*/
   {
     number: "02",
     category: "PYTHON • EDA",
@@ -36,6 +36,20 @@ const projects = [
     github: "https://github.com/jagdish211/IPL-Data-EDA-PRoject"
   },
   {
+  number: "03",
+  category: "PYTHON • EDA",
+  title: "Zomato Data Analysis",
+  description: "Performed data cleaning, missing-value analysis, duplicate detection, filtering, grouping and exploratory analysis on Zomato restaurant data.",
+  tags: ["python", "eda", "analysis"],
+  icon: "fa-utensils",
+  visual: "pv2",
+  dataset: "Zomato Restaurant Dataset",
+  tools: "Python · Pandas · NumPy · Matplotlib · Seaborn",
+  methodology: "Cleaning → preprocessing → filtering → grouping → visualization → analysis",
+  insight: "Analyzed restaurant ratings, cuisines, locations, pricing and availability to identify patterns in customer preferences and restaurant trends.",
+  github: "https://github.com/jagdish211/Zomato-Data-Analysis"
+},
+  /*{
     number: "03",
     category: "POWER BI • DASHBOARD",
     title: "Sales Dashboard",
@@ -76,21 +90,23 @@ const projects = [
     methodology: "Prepare → scale → cluster → interpret",
     insight: "Identified customer groups based on behavioral and purchasing characteristics.",
     github: "https://github.com/YOUR_USERNAME/YOUR_CUSTOMER_SEGMENTATION_REPOSITORY"
-  },
+  },*/
   {
-    number: "06",
-    category: "SQL • ANALYTICS",
-    title: "SQL Data Analysis",
-    description: "Performed business-oriented relational analysis using filtering, aggregation, subqueries and SQL analysis.",
-    tags: ["sql", "analysis"],
-    icon: "fa-database",
-    visual: "pv6",
-    dataset: "SQL business dataset",
-    tools: "SQL · MySQL",
-    methodology: "Filter → aggregate → subquery → analyze",
-    insight: "Used relational queries to answer business-focused analytical questions.",
-    github: "https://github.com/YOUR_USERNAME/YOUR_SQL_REPOSITORY"
-  }
+  number: "06",
+  category: "SQL • DATA ANALYSIS",
+  title: "Netflix Data Analysis using SQL",
+  description: "Analyzed Netflix movies and TV shows using SQL to explore genres, ratings, release years, countries, and content trends.",
+  tags: ["sql", "mysql", "netflix", "data-analysis"],
+  icon: "fa-database",
+  visual: "pv6",
+  dataset: "Netflix Movies & TV Shows dataset",
+  tools: "SQL · MySQL",
+  methodology: "Filter → aggregate → group → subquery → analyze",
+  insight: "Used SQL queries to uncover content trends, genre distribution, ratings, release patterns, and country-wise Netflix content.",
+  github: "https://github.com/jagdish211/Netflix-SQL-Analytics"
+}
+
+
 ];
 
 /* =========================================================
