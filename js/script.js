@@ -22,7 +22,7 @@ const projects = [
     github: "https://github.com/jagdish211/EDA-Project-of-Diwali-Sales-Data"
   },*/
   {
-    number: "02",
+    number: "01",
     category: "PYTHON • EDA",
     title: "IPL Data Analysis",
     description: "Performed missing-value analysis, duplicate detection, filtering, grouping and exploratory analysis on IPL data.",
@@ -36,7 +36,7 @@ const projects = [
     github: "https://github.com/jagdish211/IPL-Data-EDA-PRoject"
   },
   {
-  number: "03",
+  number: "02",
   category: "PYTHON • EDA",
   title: "Zomato Data Analysis",
   description: "Performed data cleaning, missing-value analysis, duplicate detection, filtering, grouping and exploratory analysis on Zomato restaurant data.",
@@ -48,6 +48,30 @@ const projects = [
   methodology: "Cleaning → preprocessing → filtering → grouping → visualization → analysis",
   insight: "Analyzed restaurant ratings, cuisines, locations, pricing and availability to identify patterns in customer preferences and restaurant trends.",
   github: "https://github.com/jagdish211/Zomato-Data-Analysis"
+},
+{
+  number: "03",
+  category: "SQL • DATA ANALYSIS",
+
+  title: "Spotify Data Analysis using SQL",
+
+  description: "Analyzed Spotify data using SQL to explore artists, tracks, albums, playlists, listening history, devices and music preferences.",
+
+  tags: ["sql", "mysql", "spotify", "data-analysis"],
+
+  icon: "fa-music",
+
+  visual: "pv7",
+
+  dataset: "Spotify Music Dataset",
+
+  tools: "SQL · MySQL",
+
+  methodology: "Filtering → grouping → aggregation → joins → subqueries → analysis",
+
+  insight: "Analyzed artists, tracks, playlists, genres and listening records to identify patterns in music consumption and user listening behavior.",
+
+  github: "https://github.com/jagdish211/SPOTIFY"
 },
   /*{
     number: "03",
@@ -92,7 +116,7 @@ const projects = [
     github: "https://github.com/YOUR_USERNAME/YOUR_CUSTOMER_SEGMENTATION_REPOSITORY"
   },*/
   {
-  number: "06",
+  number: "04",
   category: "SQL • DATA ANALYSIS",
   title: "Netflix Data Analysis using SQL",
   description: "Analyzed Netflix movies and TV shows using SQL to explore genres, ratings, release years, countries, and content trends.",
@@ -103,7 +127,7 @@ const projects = [
   tools: "SQL · MySQL",
   methodology: "Filter → aggregate → group → subquery → analyze",
   insight: "Used SQL queries to uncover content trends, genre distribution, ratings, release patterns, and country-wise Netflix content.",
-  github: "https://github.com/jagdish211/Netflix-SQL-Analytics"
+  github: "https://github.com/jagdish211/spotify-data-analysis"
 }
 
 
