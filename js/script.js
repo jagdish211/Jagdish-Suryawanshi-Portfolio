@@ -47,7 +47,7 @@ const projects = [
   tools: "Python · Pandas · NumPy · Matplotlib · Seaborn",
   methodology: "Cleaning → preprocessing → filtering → grouping → visualization → analysis",
   insight: "Analyzed restaurant ratings, cuisines, locations, pricing and availability to identify patterns in customer preferences and restaurant trends.",
-  github: "https://github.com/jagdish211/Zomato-Data-Analysis"
+  github: "https://github.com/jagdish211/EDA-Zomato-Data-Analytics-Project"
 },
 {
   number: "03",
