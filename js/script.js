@@ -33,7 +33,7 @@ const projects = [
     tools: "Python · Pandas · NumPy · Matplotlib",
     methodology: "Cleaning → filtering → grouping → exploratory analysis",
     insight: "Explored team, match and player-level patterns to understand IPL performance trends.",
-    github: "https://github.com/jagdish211/IPL-Data-EDA-PRoject"
+    github: "https://github.com/jagdish211/IPL-Data-Analysis-"
   },
   {
   number: "02",
@@ -129,7 +129,7 @@ const projects = [
   tools: "SQL · MySQL",
   methodology: "Filter → aggregate → group → subquery → analyze",
   insight: "Used SQL queries to uncover content trends, genre distribution, ratings, release patterns, and country-wise Netflix content.",
-  github: "https://github.com/jagdish211/IPL-Data-Analysis-"
+  github: "https://github.com/jagdish211/spotify-data-analysis"
 },
 {
   number: "05",
