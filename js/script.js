@@ -129,7 +129,7 @@ const projects = [
   tools: "SQL · MySQL",
   methodology: "Filter → aggregate → group → subquery → analyze",
   insight: "Used SQL queries to uncover content trends, genre distribution, ratings, release patterns, and country-wise Netflix content.",
-  github: "https://github.com/jagdish211/spotify-data-analysis"
+  github: "https://github.com/jagdish211/IPL-Data-Analysis-"
 },
 {
   number: "05",
