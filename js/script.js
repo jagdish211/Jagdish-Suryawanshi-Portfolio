@@ -71,7 +71,7 @@ const projects = [
 
   insight: "Analyzed artists, tracks, playlists, genres and listening records to identify patterns in music consumption and user listening behavior.",
 
-  github: "hhttps://github.com/jagdish211/Spotify-Data-Analysis-Project"
+  github: "https://github.com/jagdish211/Spotify-Data-Analysis-Project"
 },
 {
   number: "04",
