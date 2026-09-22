@@ -73,6 +73,7 @@ const projects = [
 
   github: "https://github.com/jagdish211/SPOTIFY"
 },
+
   /*{
     number: "03",
     category: "POWER BI • DASHBOARD",
@@ -115,6 +116,7 @@ const projects = [
     insight: "Identified customer groups based on behavioral and purchasing characteristics.",
     github: "https://github.com/YOUR_USERNAME/YOUR_CUSTOMER_SEGMENTATION_REPOSITORY"
   },*/
+  
   {
   number: "04",
   category: "SQL • DATA ANALYSIS",
@@ -128,7 +130,22 @@ const projects = [
   methodology: "Filter → aggregate → group → subquery → analyze",
   insight: "Used SQL queries to uncover content trends, genre distribution, ratings, release patterns, and country-wise Netflix content.",
   github: "https://github.com/jagdish211/spotify-data-analysis"
-}
+},
+{
+  number: "05",
+  category: "EXCEL • DATA ANALYSIS",
+  title: "Sales Data Analysis using Excel",
+  description: "Performed data cleaning, formatting, filtering, sorting, pivot table analysis and dashboard creation on sales data using Microsoft Excel.",
+  tags: ["excel", "analysis"],
+  icon: "fa-file-excel",
+  visual: "pv3",
+  dataset: "Sales Dataset",
+  tools: "Microsoft Excel · Pivot Tables · Charts · Conditional Formatting",
+  methodology: "Cleaning → formatting → filtering → pivot tables → visualization → dashboard → analysis",
+  insight: "Analyzed sales, revenue, products, regions and customer trends to identify top-performing products and important business patterns.",
+  github: "https://github.com/jagdish211/Excel-Sales-Dashboard-Project"
+},
+
 
 
 ];
