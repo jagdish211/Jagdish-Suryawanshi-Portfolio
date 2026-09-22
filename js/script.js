@@ -71,8 +71,37 @@ const projects = [
 
   insight: "Analyzed artists, tracks, playlists, genres and listening records to identify patterns in music consumption and user listening behavior.",
 
-  github: "https://github.com/jagdish211/SPOTIFY"
+  github: "hhttps://github.com/jagdish211/Spotify-Data-Analysis-Project"
 },
+{
+  number: "04",
+  category: "SQL • DATA ANALYSIS",
+  title: "Netflix Data Analysis using SQL",
+  description: "Analyzed Netflix movies and TV shows using SQL to explore genres, ratings, release years, countries, and content trends.",
+  tags: ["sql", "mysql", "netflix", "data-analysis"],
+  icon: "fa-database",
+  visual: "pv6",
+  dataset: "Netflix Movies & TV Shows dataset",
+  tools: "SQL · MySQL",
+  methodology: "Filter → aggregate → group → subquery → analyze",
+  insight: "Used SQL queries to uncover content trends, genre distribution, ratings, release patterns, and country-wise Netflix content.",
+  github: "https://github.com/jagdish211/Netflix-SQL-Analytics"
+},
+{
+  number: "05",
+  category: "EXCEL • DATA ANALYSIS",
+  title: "Sales Data Analysis using Excel",
+  description: "Performed data cleaning, formatting, filtering, sorting, pivot table analysis and dashboard creation on sales data using Microsoft Excel.",
+  tags: ["excel", "analysis"],
+  icon: "fa-file-excel",
+  visual: "pv3",
+  dataset: "Sales Dataset",
+  tools: "Microsoft Excel · Pivot Tables · Charts · Conditional Formatting",
+  methodology: "Cleaning → formatting → filtering → pivot tables → visualization → dashboard → analysis",
+  insight: "Analyzed sales, revenue, products, regions and customer trends to identify top-performing products and important business patterns.",
+  github: "https://github.com/jagdish211/Excel-Sales-Dashboard-Project"
+},
+
 
   /*{
     number: "03",
@@ -117,35 +146,7 @@ const projects = [
     github: "https://github.com/YOUR_USERNAME/YOUR_CUSTOMER_SEGMENTATION_REPOSITORY"
   },*/
   
-  {
-  number: "04",
-  category: "SQL • DATA ANALYSIS",
-  title: "Netflix Data Analysis using SQL",
-  description: "Analyzed Netflix movies and TV shows using SQL to explore genres, ratings, release years, countries, and content trends.",
-  tags: ["sql", "mysql", "netflix", "data-analysis"],
-  icon: "fa-database",
-  visual: "pv6",
-  dataset: "Netflix Movies & TV Shows dataset",
-  tools: "SQL · MySQL",
-  methodology: "Filter → aggregate → group → subquery → analyze",
-  insight: "Used SQL queries to uncover content trends, genre distribution, ratings, release patterns, and country-wise Netflix content.",
-  github: "https://github.com/jagdish211/spotify-data-analysis"
-},
-{
-  number: "05",
-  category: "EXCEL • DATA ANALYSIS",
-  title: "Sales Data Analysis using Excel",
-  description: "Performed data cleaning, formatting, filtering, sorting, pivot table analysis and dashboard creation on sales data using Microsoft Excel.",
-  tags: ["excel", "analysis"],
-  icon: "fa-file-excel",
-  visual: "pv3",
-  dataset: "Sales Dataset",
-  tools: "Microsoft Excel · Pivot Tables · Charts · Conditional Formatting",
-  methodology: "Cleaning → formatting → filtering → pivot tables → visualization → dashboard → analysis",
-  insight: "Analyzed sales, revenue, products, regions and customer trends to identify top-performing products and important business patterns.",
-  github: "https://github.com/jagdish211/Excel-Sales-Dashboard-Project"
-},
-
+  
 
 
 ];
