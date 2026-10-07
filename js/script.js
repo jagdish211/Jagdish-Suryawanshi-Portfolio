@@ -103,20 +103,35 @@ const projects = [
 },
 
 
-  /*{
-    number: "03",
-    category: "POWER BI • DASHBOARD",
-    title: "Sales Dashboard",
-    description: "Designed an interactive dashboard for sales performance, revenue, products, regions and customer trends.",
-    tags: ["powerbi", "analysis"],
-    icon: "fa-chart-column",
-    visual: "pv3",
-    dataset: "Sales dataset",
-    tools: "Power BI · Excel · Data Visualization",
-    methodology: "Data preparation → KPIs → dashboard → insights",
-    insight: "Created an interactive view of key sales KPIs and business trends.",
-    github: "https://github.com/YOUR_USERNAME/YOUR_SALES_DASHBOARD_REPOSITORY"
-  },
+{
+  number: "06",
+
+  category: "POWER BI • BANKING ANALYTICS",
+
+  title: "Banking & Loan Analytics Dashboard",
+
+  description:
+    "Built an interactive Power BI dashboard to analyze loan demand, approval performance, customer segments, repayment delays, and portfolio risk.",
+
+  tags: ["powerbi", "sql", "banking", "risk-analysis"],
+
+  icon: "fa-building-columns",
+
+  visual: "pv3",
+
+  dataset: "100,000 loan applications",
+
+  tools: "Power BI · DAX · SQL · Python · Excel",
+
+  methodology:
+    "Data cleaning → Feature engineering → Python EDA → SQL analysis → Power BI dashboard → Business insights",
+
+  insight:
+    "Identified loan demand patterns, approval trends, high-risk customer segments, repayment delays, and portfolio exposure to support better lending decisions.",
+
+  github: "https://github.com/jagdish211/Banking-Loan-Analytics"
+}
+    /*,
   {
     number: "04",
     category: "MACHINE LEARNING",
